@@ -8,11 +8,18 @@ webroot folder :  public_html
 Node.js base path:  Ue5Game 
 
 both http and websocket are tcp protocal , so websocket tcp connection can be embedded inside http connection....
+once websocket connection estanbilshed, it maintains its connection itself(by ping/pong)
+
 
 my node.js base URL:  https://tootzoe.com/Ue5Game/
 
 so Don't create folder named Ue5Game inside public_html....
 the request send to https://tootzoe.com/Ue5Game/ will be forward to node.js service.
+
+it seems some apache web server require our node.js app to be the form of module,
+add ["type": "module"] into pacakge.json, and use .mjs as node script source file extension.
+then the system deamon can import our node.js app as a module and runs this app as service.
+
 
 based Ue5Game url node, we can create as many services as we want, such as :
 https://tootzoe.com/Ue5Game/chat
