@@ -14,6 +14,8 @@ once websocket connection estanbilshed, it maintains its connection itself(by pi
 my node.js base URL:  https://tootzoe.com/Ue5Game/
 
 so Don't create folder named Ue5Game inside public_html....
+if some web host require folder named Ue5Game when you configure the node.js service, be sure rename folder named Ue5Game to Ue5Game2,
+when you want to configure it again, rename it back to Ue5Game, otherwise .htaccess forward function dosen't work!!!!
 the request send to https://tootzoe.com/Ue5Game/ will be forward to node.js service.
 
 it seems some apache web server require our node.js app to be the form of module,
